@@ -1,0 +1,43 @@
+﻿@model LightHouseV1.Models.Reward
+
+
+<div class="text-center">
+    <h3>Felicidades @Model.Castaway.CastawayTwitchName </h3>
+    <br />
+    <p>
+        Nos complace hacerte entrega de esta @Model.RewardType.RewardTypeName preparada por todo tu tiempo con nosotros. ¡Tratamos de no olvidar cada momento! Por eso pensamos que mereces este obsequio. Lo preparamos pensando en ti y en esos ratitos juntos, esperamos que te guste.
+    </p>
+    <br />
+    <p>
+        ¡Es unico! Contando con que su fecha de asignación es @Model.ClaimDay ésta es exactamente la número @ViewBag.orderNumber del tipo @Model.RewardType.RewardTypeName que existe en todo el mundo. Y este papel es la presente certificación de su valor (el que tú le das) ya que no se pueden comprar ni reproducir sin las plantillas originales.        
+    </p>
+    <br />
+    <p>
+        Todas las recompensas del stream están testeadas por los streamers. No requieren especial precaución de lavado, son lo más ligeras y prácticas posibles para su uso durante horas, incluso en festivales, en el trabajo, en casa de tus suegros o cualquier otro ambiente hostil. ¡Deseamos que te acompañe las máximas horas posibles! Debe ser cómoda y útil. Incluso sus colores por defecto están pensados para el clima de la prenda, recogiendo o rechazando el sol.
+    </p>
+    <br />
+    <p>
+        No incluimos, ni queremos incluir, dirección web ni ningún tipo de publicidad en lo que lleváis puesto encima. Por eso no llevan escrito nigún nombre ni referencia para que nos encuentren. Si alguien te pregunta, tendrás que valorar tú mismo que publicidad nos das (¡esperamos que no os den mucho el coñazo!), pero ojo ¡no os lo pedimos!. ¡Podéis no contestar o inventaros lo que os parezca mas divertido! Sabemos y aceptamos con mucho gusto la no-publicidad (sobre todo si pregunta un niño-rata).
+    </p>
+    <br />
+    <p>
+        Con mucho cariño,
+        os dejamos la fecha del presente documento y la firma artística:
+    </p>
+    <br />
+    <br />
+    <br />
+    <p>
+        ¡A disfrutarlo!
+        ¡Larga vida a @Model.Castaway.CastawayTwitchName!
+    </p>
+
+
+    @if (User.IsInRole("Lightkeeper"))
+                    {                        
+                        <a class="btn btn-success m-1 text-black-50" asp-area="" asp-controller="Admin" asp-action="Main">Back to ADMIN</a>                        
+                    }
+
+<a class="btn btn-primary m-1 text-black-50" asp-area="" asp-controller="Dashboard" asp-action="Main">Back to Dashboard</a>
+
+</div>

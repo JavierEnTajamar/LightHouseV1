@@ -1,0 +1,34 @@
+﻿@model LightHouseV1.Models.RewardStatus
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>RewardStatus</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="RewardStatusId" />
+            <div class="form-group">
+                <label asp-for="RewardStatusType" class="control-label"></label>
+                <input asp-for="RewardStatusType" class="form-control" />
+                <span asp-validation-for="RewardStatusType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input class="btn btn-success m-1 text-black-50" type="submit" value="Save" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary m-1 text-black-50" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

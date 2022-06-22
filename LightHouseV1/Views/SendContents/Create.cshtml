@@ -1,0 +1,38 @@
+﻿@model LightHouseV1.ViewModels.AddSendContent
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>SendContent</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Send" class="control-label"></label>
+                <select asp-for="Send.SendId" asp-items="@Model.SendList"></select>
+                <span asp-validation-for="Send" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reward" class="control-label"></label>
+                <select asp-for="Reward.RewardId" asp-items="@Model.RewardList"></select>
+                <span asp-validation-for="Reward" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-success m-1 text-black-50" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary m-1 text-black-50" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

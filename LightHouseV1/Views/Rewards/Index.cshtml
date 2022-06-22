@@ -1,0 +1,114 @@
+﻿@model IEnumerable<LightHouseV1.Models.Reward>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-success m-1 text-black-50" asp-action="Create">Create New</a>
+</p>
+
+@if (Model.Count() > 0)
+{
+<table class="table" name="example" id="example">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RewardType)
+            </th>
+            <th>
+                Viewer
+            </th>
+           @* <th>
+                @Html.DisplayNameFor(model => model.ClaimedBy)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ClaimDay)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.RewardColor)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.RewardSprayColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Template)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.BuyPrice)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.Size)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.Weight)
+            </th>*@
+            @*<th>
+                @Html.DisplayNameFor(model => model.RewardComposition)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.RewardStatus)
+            </th>
+            <th></th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model)
+{
+        <tr>
+            <td>
+                @item.RewardType.RewardTypeName
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Castaway.CastawayTwitchName)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.ClaimedBy.ClaimedByType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ClaimDay)
+            </td>*@
+            <td>
+                <input type="color" asp-for="@item.RewardColor" class="form-control" disabled />
+            </td>
+            @*<td>
+                <input type="color" asp-for="@item.RewardSprayColor" class="form-control" disabled />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Template.TemplateName)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.BuyPrice)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Size)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Weight)
+            </td>*@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.RewardComposition.RewardComponents)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.RewardStatus.RewardStatusType)
+            </td>
+            <td>
+                <a class="btn btn-success m-1 text-black-50" asp-action="Edit" asp-route-id="@item.RewardId">Edit</a> |
+                <a class="btn btn-info m-1 text-black-50" asp-action="Details" asp-route-id="@item.RewardId">Details</a> |
+                <a class="btn btn-danger m-1 text-black-50" asp-action="Delete" asp-route-id="@item.RewardId">Delete</a>
+            </td>
+            <td>
+                <a class="btn btn-warning m-1 text-black-50" asp-action="Certified" asp-route-id="@item.RewardId">Certified</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+}
+else { 
+<p>There's no Rewards!'</p>
+}

@@ -1,0 +1,104 @@
+﻿@model LightHouseV1.Models.Castaway
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Viewer name</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Dashboard" asp-action="Main" method="post">
+            <div class="row">
+                <div class="col-md-12">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <input type="hidden" asp-for="CastawayId" />
+                    <div class="form-group">
+                        <label asp-for="CastawayTwitchName" class="control-label"></label>
+                        <input asp-for="CastawayTwitchName" class="form-control" />
+                        <span asp-validation-for="CastawayTwitchName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CastawayName" class="control-label"></label>
+                        <input asp-for="CastawayName" class="form-control" />
+                        <span asp-validation-for="CastawayName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CastawayLastName" class="control-label"></label>
+                        <input asp-for="CastawayLastName" class="form-control" />
+                        <span asp-validation-for="CastawayLastName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CastawaySecondLastName" class="control-label"></label>
+                        <input asp-for="CastawaySecondLastName" class="form-control" />
+                        <span asp-validation-for="CastawaySecondLastName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <label asp-for="CastawayTelephone" class="control-label"></label>
+                        <input asp-for="CastawayTelephone" class="form-control" />
+                        <span asp-validation-for="CastawayTelephone" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CityName" class="control-label"></label>
+                        <input asp-for="CityName" class="form-control" />
+                        <span asp-validation-for="CityName" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CastawayPostalCode" class="control-label"></label>
+                        <input asp-for="CastawayPostalCode" class="form-control" />
+                        <span asp-validation-for="CastawayPostalCode" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CastawayRoadType" class="control-label"></label>
+                        @Html.DropDownListFor(m => m.CastawayRoadType, new SelectList(Enum.GetNames(typeof(CastawayRoadType))), new { @class = "form-control" })
+                        <span asp-validation-for="CastawayRoadType" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CastawayRoadName" class="control-label"></label>
+                        <input asp-for="CastawayRoadName" class="form-control" />
+                        <span asp-validation-for="CastawayRoadName" class="text-danger"></span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+
+                    <div class="form-group">
+                        <label asp-for="CastawayHomeNumber" class="control-label"></label>
+                        <input asp-for="CastawayHomeNumber" class="form-control" />
+                        <span asp-validation-for="CastawayHomeNumber" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CastawayHomePortal" class="control-label"></label>
+                        <input asp-for="CastawayHomePortal" class="form-control" />
+                        <span asp-validation-for="CastawayHomePortal" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CastawayHomeFloor" class="control-label"></label>
+                        <input asp-for="CastawayHomeFloor" class="form-control" />
+                        <span asp-validation-for="CastawayHomeFloor" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="CastawayHomeDoor" class="control-label"></label>
+                        <input asp-for="CastawayHomeDoor" class="form-control" />
+                        <span asp-validation-for="CastawayHomeDoor" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <br />
+                        <input type="submit" value="Update" class="btn btn-success m-1 text-black-50" />
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary m-1 text-black-50" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

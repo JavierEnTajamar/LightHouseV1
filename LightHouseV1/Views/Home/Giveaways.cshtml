@@ -1,0 +1,69 @@
+﻿<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        input {
+            width: 50px;
+            text-align: center
+        }
+        form {
+            align-content: center
+        }
+    </style>
+    <script type="text/javascript">
+
+        function getRandomArbitrary() {
+
+            var max;
+
+            max = form1.maxNumber.value;
+
+            form1.randomPrimero.value = (Math.floor(Math.random()*max)) +1;
+            form1.randomSegundo.value = (Math.floor(Math.random()*max)) +1;
+            form1.randomTercero.value = (Math.floor(Math.random()*max)) +1;
+            form1.randomCuarto.value = (Math.floor(Math.random()*max)) +1;
+            form1.randomQuinto.value = (Math.floor(Math.random() * max)) + 1;
+            document.getElementById("mensaje").hidden = false;;
+
+            return (Math.floor(Math.random() * max)) + 1;
+        }
+
+    </script>
+</head>
+<body>
+    <center>
+        <form id="form1" name="form1">
+            <img src="~/images/regalo.png" style="width: 15%; height:15%" /> <br />
+
+            @*<p> Random Number Generator</p>*@
+
+            <label>Set max number:  </label><input type="number" id="maxNumber" /> <br />
+            <input type="button" value="Good Luck!" onclick="getRandomArbitrary()" class="btn btn-info" style="width: 300px" />
+            <br />
+            <br />
+            <input type="number" id="randomPrimero" name="randomPrimero" disabled value="1" class="btn btn-secondary text-center" style="width: 65px" />
+            <input type="number" id="randomSegundo" name="randomSegundo" disabled value="2" class="btn btn-secondary text-center" style="width: 65px" />
+            <input type="number" id="randomTercero" name="randomTercero" disabled value="3" class="btn btn-secondary text-center" style="width: 65px" />
+            <input type="number" id="randomCuarto" name="randomCuarto" disabled value="4" class="btn btn-secondary text-center" style="width: 65px" />
+            <input type="number" id="randomQuinto" name="randomQuinto" disabled value="5" class="btn btn-secondary text-center" style="width: 65px" /><br />
+            <p id="mensaje" hidden> Not a winner? Better luck next time! </p>
+            <br />
+            <br />
+            <h6>Cómo se usa!</h6>
+
+            <p>Ésta es una herramienta principalmente para streamers</p>
+
+            <p>Debes hacer una poll (encuesta) en tu directo</p>
+
+            <p>Pregúntales qué casilla(s) será(n) la(s) ganadora(s) entre la 1 y la 5</p>
+
+            <p>Pon el numero de participantes en la casilla Set Max Number</p>
+
+            <p>Pulsa el botón "Good Luck", generará 5 numeros aleatorios! Uno por casilla!</p>
+
+            <p>Asigna el premio con el numero ganador!</p>
+        </form>
+    </center>
+</body>
+</html>

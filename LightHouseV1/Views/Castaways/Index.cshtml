@@ -1,0 +1,107 @@
+﻿@model IEnumerable<LightHouseV1.Models.Castaway>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+@*<p>
+    <a class="btn btn-success m-1 text-black-50" asp-action="Create">Create New</a>
+</p>*@
+<table class="table" id="example">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CastawayTwitchName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CastawayName)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.CastawayLastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CastawaySecondLastName)
+            </th>*@
+            <th>
+                @Html.DisplayNameFor(model => model.CastawayTelephone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CityName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CastawayPostalCode)
+            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.CastawayRoadType)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CastawayRoadName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CastawayHomeNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CastawayHomePortal)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CastawayHomeFloor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CastawayHomeDoor)
+            </th>*@
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CastawayTwitchName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CastawayName)
+            @*</td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CastawayLastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CastawaySecondLastName)
+            </td>*@
+            <td>
+                @Html.DisplayFor(modelItem => item.CastawayTelephone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CityName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CastawayPostalCode)
+            </td>
+            @*<td>
+                @Html.DisplayFor(modelItem => item.CastawayRoadType)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CastawayRoadName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CastawayHomeNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CastawayHomePortal)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CastawayHomeFloor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CastawayHomeDoor)
+            </td>*@
+            <td>
+                <a class="btn btn-success m-1 text-black-50" asp-action="Edit" asp-route-id="@item.CastawayId">Edit</a> |
+                <a class="btn btn-info m-1 text-black-50" asp-action="Details" asp-route-id="@item.CastawayId">Details</a> |
+                <a class="btn btn-danger m-1 text-black-50" asp-action="Delete" asp-route-id="@item.CastawayId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

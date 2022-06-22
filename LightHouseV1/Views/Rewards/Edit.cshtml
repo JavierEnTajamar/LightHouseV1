@@ -1,0 +1,91 @@
+﻿@model LightHouseV1.ViewModels.AddRewardSettingsViewModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Reward</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Reward.RewardId" />
+            <div class="form-group">
+                <label asp-for="RewardType" class="control-label"></label>
+                <select asp-for="Reward.RewardType.RewardTypeId" asp-items="@Model.RewardTypeList" class="form-control" ></select>
+                <span asp-validation-for="RewardType" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+@*                <label asp-for="Castaway" class="control-label"></label>
+*@                <label  class="control-label">Viewer</label>
+                <select asp-for="Reward.Castaway.CastawayId" asp-items="@Model.CastawayList" class="form-control"></select>
+                <span asp-validation-for="Castaway" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ClaimedBy" class="control-label"></label>
+                <select asp-for="Reward.ClaimedBy.ClaimedById" asp-items="@Model.ClaimedByList" class="form-control"></select>
+                <span asp-validation-for="ClaimedBy" class="text-danger"></span>
+            </div>
+            <!--<div class="form-group">
+                <label asp-for="Reward.ClaimDay" class="control-label"></label>
+                <input asp-for="Reward.ClaimDay" class="form-control" />-->
+                @*<input asp-for="Reward.ClaimDay" class="form-control" placeholder="@Model.Reward.ClaimDay.Value" />*@
+                <!--<span asp-validation-for="Reward.ClaimDay" class="text-danger"></span>
+            </div>-->
+            <div class="form-group">
+                <label asp-for="Reward.RewardColor" class="control-label"></label>
+                <input type="color" asp-for="Reward.RewardColor" class="form-control" />
+                <span asp-validation-for="Reward.RewardColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reward.RewardSprayColor" class="control-label"></label>
+                <input type="color" asp-for="Reward.RewardSprayColor" class="form-control" />
+                <span asp-validation-for="Reward.RewardSprayColor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Template" class="control-label"></label>
+                <select asp-for="Reward.Template.TemplateId" asp-items="@Model.TemplateList" class="form-control"></select>
+                <span asp-validation-for="Template" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reward.BuyPrice" class="control-label"></label>
+                <input asp-for="Reward.BuyPrice" class="form-control" />
+                <span asp-validation-for="Reward.BuyPrice" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reward.Size" class="control-label"></label>
+                <input asp-for="Reward.Size" class="form-control" />
+                <span asp-validation-for="Reward.Size" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Reward.Weight" class="control-label"></label>
+                <input asp-for="Reward.Weight" class="form-control" />
+                <span asp-validation-for="Reward.Weight" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RewardComposition" class="control-label"></label>
+                <select asp-for="Reward.RewardComposition.RewardCompositionId" asp-items="@Model.RewardCompositionList" class="form-control"></select>
+                <span asp-validation-for="RewardComposition" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RewardStatus" class="control-label"></label>
+                <select asp-for="Reward.RewardStatus.RewardStatusId" asp-items="@Model.RewardStatusList" class="form-control"></select>
+                <span asp-validation-for="RewardStatus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Edit" class="btn btn-success m-1 text-black-50" />
+            </div>         
+        </form>
+    </div>
+</div>
+
+<div>
+    <a class="btn btn-primary m-1 text-black-50" asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

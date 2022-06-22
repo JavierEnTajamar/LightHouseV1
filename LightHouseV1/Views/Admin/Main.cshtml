@@ -1,0 +1,60 @@
+﻿<center>
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-3">
+            <br />
+            <br />
+            <br />
+            <br />
+            <br />
+            <img src="~/images/matraz.png" style="width: auto; height:auto" />
+        </div>
+        <div class="col-3">
+            <a class="btn btn-success m-1 text-black-50" asp-area="" asp-controller="Castaways" asp-action="Index">Manage Viewers</a>
+            <br />
+            <br />
+            <a class="btn btn-success m-1 text-black-50" asp-area="" asp-controller="Sends" asp-action="Index">Manage Sends</a>
+            <br />
+            <br />
+            <a class="btn btn-success m-1 text-black-50" asp-area="" asp-controller="Rewards" asp-action="Index">Manage Rewards</a> <br />
+            <a class="btn btn-info m-1 text-black-50" asp-area="" asp-controller="RewardTypes" asp-action="Index">Manage Reward Types</a> <br />
+            <a class="btn btn-info m-1 text-black-50" asp-area="" asp-controller="ClaimedBies" asp-action="Index">Manage ClaimedBy</a> <br />
+            <a class="btn btn-info m-1 text-black-50" asp-area="" asp-controller="Templates" asp-action="Index">Manage Templates</a> <br />
+            <a class="btn btn-info m-1 text-black-50" asp-area="" asp-controller="RewardCompositions" asp-action="Index">Manage Reward Compositions</a> <br />
+            <a class="btn btn-info m-1 text-black-50" asp-area="" asp-controller="RewardStatus" asp-action="Index">Manage Reward Status</a>
+        </div>
+        <div class="col-3"></div>
+        <div class="col-12">
+            <br />
+            <br />
+        </div>
+        
+
+        @*Cambio de linea*@
+        <div class="col-2"></div>
+        <div class="col-2">
+            <br />
+            <label class="card-title"><b>Rewards Amount</b></label> <br />
+            <label>@ViewBag.GastosRewards</label>
+        </div>
+        <div class="col-2">
+            <br />
+            <label><b>Sends Amount</b></label> <br />
+            <label>@ViewBag.GastosSends</label>
+        </div>
+        <div class="col-2">
+            <br />
+            <label><b>Total Amount</b></label> <br />
+            <label>@ViewBag.GastosTotales</label>
+        </div>
+        <div class="col-2">
+            <img src="~/images/contadorAdmin.png" style="width: 45%; height:80%" />
+        </div>
+        <div class="col-2"></div>
+    </div>
+    
+
+</center>
+
+
+

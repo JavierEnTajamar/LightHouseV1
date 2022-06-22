@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        input {
+            width: 50px;
+            text-align: center
+        }
+        form {
+            align-content: center
+        }
+    </style>
+    <script type="text/javascript">
+
+        function getRandomArbitrary() {
+
+            var max;
+
+            max = form1.maxNumber.value;
+
+            form1.randomPrimero.value = (Math.floor(Math.random()*max)) +1;
+            form1.randomSegundo.value = (Math.floor(Math.random()*max)) +1;
+            form1.randomTercero.value = (Math.floor(Math.random()*max)) +1;
+            form1.randomCuarto.value = (Math.floor(Math.random()*max)) +1;
+            form1.randomQuinto.value = (Math.floor(Math.random() * max)) + 1;
+            document.getElementById("mensaje").hidden = false;;
+
+            return (Math.floor(Math.random() * max)) + 1;
+        }
+
+    </script>
+</head>
+<body>
+    <center>
+        <form id="form1" name="form1">   
+            <h6>Tu Logo de Twitch aquí</h6>
+            <img src="~/images/twitchLogo.png" style="width: 70%; height:70%"/> <br />
+
+            @*<p> Random Number Generator</p>
+
+            <label>Set max number:  </label><input type="number" id="maxNumber" /> <br />
+            <input type="button" value="Good Luck!" onclick="getRandomArbitrary()" class="btn btn-info" style="width: 300px"/>
+            <br />
+            <br />
+            <input type="number" id="randomPrimero" name="randomPrimero" disabled value="1" class="btn btn-secondary text-center" style="width: 65px" />
+            <input type="number" id="randomSegundo" name="randomSegundo" disabled value="2" class="btn btn-secondary text-center" style="width: 65px" />
+            <input type="number" id="randomTercero" name="randomTercero" disabled value="3" class="btn btn-secondary text-center" style="width: 65px" />
+            <input type="number" id="randomCuarto" name="randomCuarto" disabled value="4" class="btn btn-secondary text-center" style="width: 65px" />
+            <input type="number" id="randomQuinto" name="randomQuinto" disabled value="5" class="btn btn-secondary text-center" style="width: 65px" /><br />
+            <p id="mensaje" hidden> Not a winner? Better luck next time! </p>*@
+
+        </form>
+    </center>
+</body>
+</html>

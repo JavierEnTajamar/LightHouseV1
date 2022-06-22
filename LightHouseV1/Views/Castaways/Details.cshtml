@@ -1,0 +1,96 @@
+﻿@model LightHouseV1.Models.Castaway
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Viewer name</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CastawayTwitchName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CastawayTwitchName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CastawayName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CastawayName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CastawayLastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CastawayLastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CastawaySecondLastName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CastawaySecondLastName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CastawayTelephone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CastawayTelephone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CityName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CityName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CastawayPostalCode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CastawayPostalCode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CastawayRoadType)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CastawayRoadType)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CastawayRoadName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CastawayRoadName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CastawayHomeNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CastawayHomeNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CastawayHomePortal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CastawayHomePortal)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CastawayHomeFloor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CastawayHomeFloor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CastawayHomeDoor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CastawayHomeDoor)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-success m-1 text-black-50" asp-action="Edit" asp-route-id="@Model.CastawayId">Edit</a> |
+    <a class="btn btn-primary m-1 text-black-50" asp-action="Index">Back to List</a>
+</div>

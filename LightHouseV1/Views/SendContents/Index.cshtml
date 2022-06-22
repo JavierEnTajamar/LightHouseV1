@@ -1,0 +1,42 @@
+﻿@model IEnumerable<LightHouseV1.Models.SendContent>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-success m-1 text-black-50" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Send.SendName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Reward.Castaway.CastawayTwitchName)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @item.Send.SendName
+            </td>
+            <td>
+                @item.Reward.Castaway.CastawayTwitchName  
+                @item.Reward.RewardType.RewardTypeName 
+            </td>
+            <td>
+                <a class="btn btn-success m-1 text-black-50" asp-action="Edit" asp-route-id="@item.SendContentId">Edit</a> |
+                <a class="btn btn-primary m-1 text-black-50" asp-action="Details" asp-route-id="@item.SendContentId">Details</a> |
+                <a class="btn btn-danger m-1 text-black-50" asp-action="Delete" asp-route-id="@item.SendContentId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,24 @@
+﻿@using LightHouseV1.Models
+@model AccountLoginViewModel
+
+    <div class="text-center">
+
+        <p>EL LOGO DE TU CANAL AQUÍ</p>
+        <img src="~/images/twitchLogo.png" style="width: 50%; height:50%"/> <br />
+        <h2>User Login</h2>
+
+        <form asp-action="Login" asp-controller="Account" method="post">
+            <div asp-validation-summary="All"></div>
+            <label asp-for="Email"></label> <br />
+            <input asp-for="Email" />
+            <span asp-validation-for="Email"></span>
+            <br />
+
+            <label asp-for="Password"></label> <br />
+            <input asp-for="Password" />
+            <span asp-validation-for="Password"></span>
+            <br />
+
+            <button class="btn btn-success m-1 text-black-50" type="submit">Login</button>
+        </form>
+    </div>

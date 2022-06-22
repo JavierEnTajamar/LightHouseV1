@@ -1,0 +1,54 @@
+﻿@model LightHouseV1.Models.Reward
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Reward</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.ClaimDay)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.ClaimDay)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RewardColor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RewardColor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.RewardSprayColor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.RewardSprayColor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.BuyPrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BuyPrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Size)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Size)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Weight)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Weight)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a class="btn btn-success m-1 text-black-50" asp-action="Edit" asp-route-id="@Model.RewardId">Edit</a> |
+    <a class="btn btn-primary m-1 text-black-50" asp-action="Index">Back to List</a>
+</div>

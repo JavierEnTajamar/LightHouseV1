@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LightHouseV1</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+</head>
+<body style="background-color:bisque">
+    <header style="background-color:blueviolet">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" >
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/twitchUpLogo.png" style="width: 85px; height:40px" />
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="btn btn-success m-1 text-black-50" asp-area="" asp-controller="Dashboard" asp-action="Main">Dashboard</a>                            
+                        </li>
+                        <li>                            
+                            <a class="btn btn-info m-1 text-black-50" asp-controller="Dashboard" asp-action="Profile">Profile</a>
+                        </li>
+                        <li>                            
+                            <a class="btn btn-info m-1 text-black-50" asp-controller="Home" asp-action="Giveaways">Giveaways</a>
+                        </li>
+                        <li>                            
+                            <a class="btn btn-info m-1 text-black-50" asp-controller="Home" asp-action="OurRules">Our Rules</a>
+                        </li>
+                        <li>                            
+                            <a class="btn btn-info m-1 text-black-50" href="https://www.twitch.tv/swyggon">Go to Stream</a>
+                        </li>
+                    </ul>
+                    @if (User.IsInRole("Lightkeeper"))
+                    {                        
+                        <a class="btn btn-warning m-1 text-black-50" asp-area="" asp-controller="Admin" asp-action="Main">ADMIN</a>                        
+                    }
+                    @if (User.IsInRole("Lightkeeper") || User.IsInRole("Castaway"))
+                    {                        
+                        <a class="btn btn-danger m-1 text-black-50" asp-controller="Home" asp-action="Logout">Logout</a>                        
+                    }
+                    else
+                    {                       
+                        <a class="btn btn-info m-1 text-black-50" asp-controller="Account" asp-action="Register">Register</a>                     
+                        <a class="btn btn-success m-1 text-black-50" asp-controller="Account" asp-action="Login">Login</a>                        
+                    }
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-10">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+        <div class="col-1"></div>
+    </div>
+
+    <footer class="border-top footer text-muted" style="background-color:blueviolet" >
+        <div class="container">
+            &copy; 2022 - TwitchUpV1 - <a class="text-white-50" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            let table = new DataTable('#example');
+        });
+    </script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,85 @@
+﻿@model IEnumerable<LightHouseV1.Models.Send>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-success m-1 text-black-50" asp-action="Create">Create New</a>
+</p>
+
+@if (Model.Count() < 1)
+            {
+    <p> No Sends in Database</p>
+            }else 
+{
+
+
+    <table class="table" id="example">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.SendName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.TrackingCode)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.SendType)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Deliver)
+                </th>
+                @*<th>
+                    Html.DisplayNameFor(model => model.SendPrice)
+                </th>*@
+                <th>
+                    @Html.DisplayNameFor(model => model.SendDay)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ReceptionDay)
+                </th>
+                <th></th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SendName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TrackingCode)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SendType)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Deliver)
+                    </td>
+                    @*<td>
+                        @Html.DisplayFor(modelItem => item.SendPrice)
+                    </td>*@
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SendDay)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ReceptionDay)
+                    </td>
+                    <td>
+                        <a class="btn btn-success m-1 text-black-50" asp-action="Edit" asp-route-id="@item.SendId">Edit</a> |
+                        <a class="btn btn-primary m-1 text-black-50" asp-action="Details" asp-route-id="@item.SendId">Details</a> |
+                        <a class="btn btn-danger m-1 text-black-50" asp-action="Delete" asp-route-id="@item.SendId">Delete</a>
+                    </td>
+                    <td>
+                        <a class="btn btn-info m-1 text-black-50" asp-controller="SendContents" asp-action="Create">Load Send</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}

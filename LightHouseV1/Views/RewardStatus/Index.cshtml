@@ -1,0 +1,35 @@
+﻿@model IEnumerable<LightHouseV1.Models.RewardStatus>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a class="btn btn-success m-1 text-black-50" asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.RewardStatusType)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.RewardStatusType)
+            </td>
+            <td>
+                <a class="btn btn-success m-1 text-black-50" asp-action="Edit" asp-route-id="@item.RewardStatusId">Edit</a> |
+                <a class="btn btn-primary m-1 text-black-50" asp-action="Details" asp-route-id="@item.RewardStatusId">Details</a> |
+                <a class="btn btn-danger m-1 text-black-50" asp-action="Delete" asp-route-id="@item.RewardStatusId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

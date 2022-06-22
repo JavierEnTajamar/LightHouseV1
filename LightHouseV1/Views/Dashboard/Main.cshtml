@@ -1,0 +1,109 @@
+﻿@model LightHouseV1.Models.Castaway
+
+<h1>@Model.CastawayTwitchName Dashboard</h1>
+<h4>Ésto se puede personalizar con el mote que les has puesto a tus seguidores</h4>
+
+<h6> You have 0 Tokens</h6>
+<h6> You have @ViewBag.TotalRewards rewards </h6>
+<h6> You have @ViewBag.DiferentRewards diferent rewards of 5 </h6>
+
+@if (@ViewBag.TotalRewards > 0)
+{
+<table class="table" name="example" id="example">
+    <thead>
+        <tr>
+            <th>
+                Type
+            </th>
+            <th>
+                Viewer
+            </th>
+            <th>
+                Claimed By
+            </th>
+            <th>
+                Claim Day
+            </th>
+            <th>
+                Reward Color
+            </th>
+            <th>
+                RewardSprayColor
+            </th>
+            <th>
+                Template
+            </th>
+            <th>
+                Size
+            </th>
+            <th>
+                Weight
+            </th>
+            <th>
+                Reward Composition
+            </th>
+            <th>
+                Reward Status
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in ViewBag.Rewards)
+{
+        <tr>
+            <td>
+                @item.RewardType.RewardTypeName
+            </td>
+            <td>
+                @item.Castaway.CastawayTwitchName
+            </td>
+            <td>
+                @item.ClaimedBy.ClaimedByType
+            </td>
+            <td>
+                @item.ClaimDay
+            </td>
+            <td>
+                @item.RewardColor
+            </td>
+            <td>
+                @item.RewardSprayColor
+            </td>
+            <td>
+                @item.Template.TemplateName
+            </td>
+
+            <td>
+                @item.Size
+            </td>
+            <td>
+                @item.Weight
+            </td>
+            <td>
+                @item.RewardComposition.RewardComponents
+            </td>
+            <td>
+                @item.RewardStatus.RewardStatusType
+            </td>
+            <td>
+                <a class="btn btn-warning m-1 text-black-50" asp-controller="Rewards" asp-action="Certified" asp-route-id="@item.RewardId">Certified</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+}
+else {
+<p>There's no Rewards!'</p>
+}
+
+@if (@ViewBag.TotalRewards < 1)
+{
+<p>Si tienes rewards antes de haberte registrado y no aparecen habla con el admin para que te asigne tu perfil virtual</p>
+}
+
+<center>
+<img src="~/images/ merchandisin.png" />
+</center>
